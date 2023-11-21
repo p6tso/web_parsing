@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <title>(de)coding</title>
+    </head>
+    <header>
+        <h1>p6tsonline</h1>
+        <img src="aaa.png" width="45" height="45">
+    </header>
+    <div class="sidenav">
+        <a href="index.html">main</a>
+        <a href="https://t.me/p7796">Contact</a>
+        <div class="dropdown">
+          <button class="dropbtn">pr1</button>
+          <div class="dropdown-content">
+            <a href="project1.html">watch</a>
+            <a href="#">use</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">pr2</button>
+          <div class="dropdown-content">
+            <a href="project2.html">watch</a>
+            <a href="#">use</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">pr3</button>
+          <div class="dropdown-content">
+            <a href="project3.html">watch</a>
+            <a href="#">use</a>
+          </div>
+        </div>
+    </div>
+    <body>
+        <h1>(de)coding</h1>
+        <h2>some cryptograph algorithm</h2>
+        <pre>
+def <def>get_new_index</def><def>(</def>word<def>)</def><var>:</var>
+    old_index_and_letter <sss>=</sss> <def>{</def><def>}</def>
+    <sss>for </sss>i <sss>in </sss><def>range<def>(</def></def><def>len<def>(</def></def>word<def>)</def><def>)</def><var>:</var> old_index_and_letter<def>[</def>i<def>]</def> <sss>=</sss> <def>ord<def>(</def></def>word<def>[</def>i<def>]</def><def>)</def>
+    sorted_letters <sss>=</sss> <def>sorted<def>(</def></def>old_index_and_letter.items<def>(</def><def>)</def><var>,</var> key<sss>=</sss><def>lambda</def> item<var>:</var> item<def>[</def><sss>1</sss><def>]</def><def>)</def>
+    new_index <sss>=</sss> <def>[</def><def>]</def>
+    <sss>for </sss>i <sss>in </sss>sorted_letters<var>:</var> new_index<def>.append</def><def>(</def>i<def>[</def><sss>0</sss><def>]</def><def>)</def>
+    <sss>return</sss> new_index
+
+
+def <def>perm</def><def>(</def>code<var>,</var> decode<def>)</def><var>:</var>
+    indexes <sss>=</sss> <def>get_new_index</def><def>(</def>code<def>)</def>
+    counter <sss>=</sss> <def>len<def>(</def></def>code<def>)</def> <sss>-</sss> <sss>1</sss>
+    ans <sss>=</sss> <def>[</def><def>]</def>
+    sgn <sss>=</sss> <sss>-</sss><sss>1</sss>
+    <sss>for </sss>i <sss>in </sss><def>range<def>(</def></def><def>len<def>(</def></def>code<def>)</def><def>)</def><var>:</var> ans<def>.append</def><def>(</def><def>[</def><def>]</def><def>)</def>
+    <sss>for </sss>i <sss>in </sss><def>range<def>(</def></def><def>len<def>(</def></def>decode<def>)</def><def>)</def><var>:</var>
+        ans<def>[</def>indexes<def>[</def>counter<def>]</def><def>]</def><def>.append</def><def>(</def>i<def>)</def>
+        counter <sss>+</sss><sss>=</sss> sgn
+        <sss>if </sss>counter <sss>=</sss><sss>=</sss> <def>len<def>(</def></def>code<def>)</def> <sss>-</sss> <sss>1</sss> or counter <sss>=</sss><sss>=</sss> <sss>0</sss><var>:</var> sgn <sss>*</sss><sss>=</sss> <sss>-</sss><sss>1</sss>
+    ans_new <sss>=</sss> <def>[</def><def>]</def>
+    <sss>for </sss>i <sss>in </sss>ans<var>:</var> ans_new <sss>+</sss><sss>=</sss> i
+    <sss>return</sss> ans_new
+
+
+def <def>back_index</def><def>(</def>code<var>,</var> decode<def>)</def><var>:</var>
+    index <sss>=</sss> <def>perm</def><def>(</def>code<var>,</var> decode<def>)</def>
+    ans <sss>=</sss> <def>[</def>i <sss>for </sss>i <sss>in </sss><def>range<def>(</def></def><def>len<def>(</def></def>decode<def>)</def><def>)</def><def>]</def>
+    <sss>for </sss>i <sss>in </sss><def>range<def>(</def></def><def>len<def>(</def></def>index<def>)</def><def>)</def><var>:</var> ans<def>[</def>index<def>[</def>i<def>]</def><def>]</def> <sss>=</sss> i
+    <sss>return</sss> ans
+
+
+def <def>coding</def><def>(</def>code<var>,</var> word <var>,</var> rev <sss>=</sss> <sss>0</sss><def>)</def><var>:</var>
+    <sss>if </sss><def>len<def>(</def></def>word<def>)</def> <sss>=</sss><sss>=</sss> <sss>1</sss> or <def>len<def>(</def></def>code<def>)</def> <sss>=</sss><sss>=</sss> <sss>1</sss><var>:</var> <sss>return</sss> word
+    <sss>if </sss>rev<var>:</var> index <sss>=</sss> <def>back_index</def><def>(</def>code<var>,</var> word<def>)</def>
+    else<var>:</var> index <sss>=</sss> <def>perm</def><def>(</def>code<var>,</var> word<def>)</def>
+    ans <sss>=</sss> <sss>&apos;</sss><sss>&apos;</sss>
+    <sss>for </sss>i <sss>in </sss>index<var>:</var> ans <sss>+</sss><sss>=</sss> word<def>[</def>i<def>]</def>
+    <sss>return</sss> ans
+
+
+<def>print<def>(</def></def><sss>&apos;</sss><sss>&apos;</sss><sss>&apos;</sss>
+
+                      ____...
+             .-"--"""".__    `.
+            |            `    |
+  (         `._....------.._.:
+   )         .()''        ``().
+  '          () .=='  `===  `-.
+   . )       (         g)
+    )         )     /        J
+   (          |.   /      . (
+   $$         (.  (_'.   , )|`
+   ||         |\`-....--'/  ' \
+  /||.         \ | | | /  /   \.
+ //||(\         \`-===-'  '     \o.
+.//7' |)         `. --   / (     OObaaaad888b.
+(<<. / |     .a888b`.__.'d\     OO888888888888a.
+ \  Y' |    .8888888aaaa88POOOOOO888888888888888.
+  \  \ |   .888888888888888888888888888888888888b
+   |   |  .d88888P88888888888888888888888b8888888.
+   b.--d .d88888P8888888888888888a:f888888|888888b
+   88888b 888888|8888888888888888888888888\8888888
+            <sss>&apos;</sss><sss>&apos;</sss><sss>&apos;</sss><def>)</def>
+        </pre>
+        <p>firstly i try to transfer analog algorythm to digital, but then i get that all about just permutation</p>
+        <h2>before</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc sapien, tempus in mi vel, auctor eleifend nisl. Morbi aliquam nisl ut nibh venenatis, non auctor tortor vehicula. Duis tempus auctor odio eget vehicula. Curabitur feugiat tellus nisi, id convallis mi sodales in. Nam sed enim felis. Donec mauris dui, gravida id scelerisque a, sodales eu neque. Phasellus at eros turpis. Nunc tempus sem eget libero ullamcorper placerat. Maecenas venenatis felis mattis diam consequat, eget consectetur nisi lobortis. Integer varius vulputate felis quis feugiat. Praesent vel rhoncus eros. Sed sed viverra sem. Vestibulum ut vulputate ante, sit amet ornare nunc.</p>
+        <h2>after</h2>
+        <p>rmla,trc rni iiurnibliuvnour auuuigc.tftu cs    m esiddiea eh ep m tbarctnvsliietcen snasafiePs nseirVitla,ernmsrtceail naesv efloq  ht tteusmtothCbut inloeaefs r vseaouqsuouutegrlel cntstmn ttrote vulqg.neur   .u uesaan p iosdpi.csmue,li.Mumnbi,o hc eo  euagansvldlmseimugacl,s eelstn meourpMeea a oeeeubrgrupi ittvsesdsmlmtti r euo  c seCupt  a esrint ancovlipcdei ie s,oissNd .ci,i r deuasrrNeseelpa.eeiitas, c litv teuu elcodva bup  mnuo omteuiga e,nmcodnias eenatr.Dsaoeuau eli  ii.eiDn uaisuls.Pa i.ps imoeaa  esdqaosii.Irut sfrero.Svret unetocisnit ple aisritrvriiaa lare nl c   anmcgtoelsa  eeuateLdetnsn t  ln o   lrldmnnod qe tsulcrsf uns ie ah esvt </p>
+        <p><a id="btt">try it online?!</a><br></p>
+        <hr noshade size="2" color="green">
+    </body>
+    <footer>
+        <a id="pppp" href="https://t.me/p7796">p6tso &copy;</a>
+        <IMG SRC="me.png" width="15" height="15">
+    </footer>
+</html>

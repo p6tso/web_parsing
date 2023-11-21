@@ -1,0 +1,42 @@
+def get_new_index(word):
+    old_index_and_letter = {}
+    for i in range(len(word)): old_index_and_letter[i] = ord(word[i])
+    sorted_letters = sorted(old_index_and_letter.items(), key=lambda item: item[1])
+    new_index = []
+    for i in sorted_letters: new_index.append(i[0])
+    return new_index
+
+
+def perm(code, decode):
+    indexes = get_new_index(code)
+    counter = len(code) - 1
+    ans = []
+    sgn = -1
+    for i in range(len(code)): ans.append([])
+    for i in range(len(decode)):
+        ans[indexes[counter]].append(i)
+        counter += sgn
+        if counter == len(code) - 1 or counter == 0: sgn *= -1
+    ans_new = []
+    for i in ans: ans_new += i
+    return ans_new
+
+
+def back_index(code, decode):
+    index = perm(code, decode)
+    ans = [i for i in range(len(decode))]
+    for i in range(len(index)): ans[index[i]] = i
+    return ans
+
+
+def coding(code, word , rev = 0):
+    if len(word) == 1 or len(code) == 1: return word
+    if rev: index = back_index(code, word)
+    else: index = perm(code, word)
+    ans = ''
+    for i in index: ans += word[i]
+    return ans
+
+
+print('''
+    ''')

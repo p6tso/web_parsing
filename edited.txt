@@ -1,0 +1,42 @@
+def <def>get_new_index</def><def>(</def>word<def>)</def><var>:</var>
+    old_index_and_letter <sss>=</sss> <def>{</def><def>}</def>
+    <sss>for </sss>i <sss>in </sss><def>range<def>(</def></def><def>len<def>(</def></def>word<def>)</def><def>)</def><var>:</var> old_index_and_letter<def>[</def>i<def>]</def> <sss>=</sss> <def>ord<def>(</def></def>word<def>[</def>i<def>]</def><def>)</def>
+    sorted_letters <sss>=</sss> <def>sorted<def>(</def></def>old_index_and_letter.items<def>(</def><def>)</def><var>,</var> key<sss>=</sss><def>lambda</def> item<var>:</var> item<def>[</def><sss>1</sss><def>]</def><def>)</def>
+    new_index <sss>=</sss> <def>[</def><def>]</def>
+    <sss>for </sss>i <sss>in </sss>sorted_letters<var>:</var> new_index<def>.append</def><def>(</def>i<def>[</def><sss>0</sss><def>]</def><def>)</def>
+    <sss>return</sss> new_index
+
+
+def <def>perm</def><def>(</def>code<var>,</var> decode<def>)</def><var>:</var>
+    indexes <sss>=</sss> <def>get_new_index</def><def>(</def>code<def>)</def>
+    counter <sss>=</sss> <def>len<def>(</def></def>code<def>)</def> <sss>-</sss> <sss>1</sss>
+    ans <sss>=</sss> <def>[</def><def>]</def>
+    sgn <sss>=</sss> <sss>-</sss><sss>1</sss>
+    <sss>for </sss>i <sss>in </sss><def>range<def>(</def></def><def>len<def>(</def></def>code<def>)</def><def>)</def><var>:</var> ans<def>.append</def><def>(</def><def>[</def><def>]</def><def>)</def>
+    <sss>for </sss>i <sss>in </sss><def>range<def>(</def></def><def>len<def>(</def></def>decode<def>)</def><def>)</def><var>:</var>
+        ans<def>[</def>indexes<def>[</def>counter<def>]</def><def>]</def><def>.append</def><def>(</def>i<def>)</def>
+        counter <sss>+</sss><sss>=</sss> sgn
+        <sss>if </sss>counter <sss>=</sss><sss>=</sss> <def>len<def>(</def></def>code<def>)</def> <sss>-</sss> <sss>1</sss> or counter <sss>=</sss><sss>=</sss> <sss>0</sss><var>:</var> sgn <sss>*</sss><sss>=</sss> <sss>-</sss><sss>1</sss>
+    ans_new <sss>=</sss> <def>[</def><def>]</def>
+    <sss>for </sss>i <sss>in </sss>ans<var>:</var> ans_new <sss>+</sss><sss>=</sss> i
+    <sss>return</sss> ans_new
+
+
+def <def>back_index</def><def>(</def>code<var>,</var> decode<def>)</def><var>:</var>
+    index <sss>=</sss> <def>perm</def><def>(</def>code<var>,</var> decode<def>)</def>
+    ans <sss>=</sss> <def>[</def>i <sss>for </sss>i <sss>in </sss><def>range<def>(</def></def><def>len<def>(</def></def>decode<def>)</def><def>)</def><def>]</def>
+    <sss>for </sss>i <sss>in </sss><def>range<def>(</def></def><def>len<def>(</def></def>index<def>)</def><def>)</def><var>:</var> ans<def>[</def>index<def>[</def>i<def>]</def><def>]</def> <sss>=</sss> i
+    <sss>return</sss> ans
+
+
+def <def>coding</def><def>(</def>code<var>,</var> word <var>,</var> rev <sss>=</sss> <sss>0</sss><def>)</def><var>:</var>
+    <sss>if </sss><def>len<def>(</def></def>word<def>)</def> <sss>=</sss><sss>=</sss> <sss>1</sss> or <def>len<def>(</def></def>code<def>)</def> <sss>=</sss><sss>=</sss> <sss>1</sss><var>:</var> <sss>return</sss> word
+    <sss>if </sss>rev<var>:</var> index <sss>=</sss> <def>back_index</def><def>(</def>code<var>,</var> word<def>)</def>
+    else<var>:</var> index <sss>=</sss> <def>perm</def><def>(</def>code<var>,</var> word<def>)</def>
+    ans <sss>=</sss> <sss>&apos;</sss><sss>&apos;</sss>
+    <sss>for </sss>i <sss>in </sss>index<var>:</var> ans <sss>+</sss><sss>=</sss> word<def>[</def>i<def>]</def>
+    <sss>return</sss> ans
+
+
+<def>print<def>(</def></def><sss>&apos;</sss><sss>&apos;</sss><sss>&apos;</sss>
+    <sss>&apos;</sss><sss>&apos;</sss><sss>&apos;</sss><def>)</def>

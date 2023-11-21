@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <title>text editor</title>
+    </head>
+    <header>
+        <h1>p6tsonline</h1>
+        <img src="aaa.png" width="45" height="45">
+    </header>
+    <div class="sidenav">
+        <a href="index.html">main</a>
+        <a href="https://t.me/p7796">Contact</a>
+        <div class="dropdown">
+          <button class="dropbtn">pr1</button>
+          <div class="dropdown-content">
+            <a href="project1.html">watch</a>
+            <a href="#">use</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">pr2</button>
+          <div class="dropdown-content">
+            <a href="project2.html">watch</a>
+            <a href="#">use</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">pr3</button>
+          <div class="dropdown-content">
+            <a href="project3.html">watch</a>
+            <a href="#">use</a>
+          </div>
+        </div>
+    </div>
+    <body>
+        <h1>html_formatting</h1>
+        <p>that's look pretty like ide, but how?</p>
+        <pre>
+<sss>#include</sss> <sss>&lt;</sss>iostream<sss>&gt;</sss>
+<sss>#include</sss> <sss>&lt;</sss><class>vector</class><sss>&gt;</sss>
+<sss>#include</sss> <sss>&quot;</sss>optimization.h<sss>&quot;</sss>
+<sss>#include</sss> <sss>&lt;</sss><class>unordered_map</class><sss>&gt;</sss>
+<sss>#include</sss> <sss>&lt;</sss><class>map</class><sss>&gt;</sss>
+<sss>#include</sss> <sss>&lt;</sss><class>unordered_set</class><sss>&gt;</sss>
+<sss>#include</sss> <sss>&lt;</sss><class>set</class><sss>&gt;</sss>
+using namespace std<var>;
+</var><class>vector</class><sss>&lt;</sss><class>int</class><sss>&gt;</sss> mass<var>;
+</var><class>unordered_map</class><sss>&lt;</sss><class>int</class><var>,</var><class>set</class><sss>&lt;</sss><class>int</class><sss>&gt;</sss><sss>&gt;</sss> cnt<var>;
+</var><class>map</class><sss>&lt;</sss><class>int</class><var>,</var><class>unordered_set</class><sss>&lt;</sss><class>int</class><sss>&gt;</sss><sss>&gt;</sss> key<var>;
+</var>void <def>chng</def><def>(</def><var><class>int</class> i<var>,</var><class>int</class> j</var><def>)</def><def>{</def>
+    <class>int</class> a<sss>=</sss>mass<def>[</def><var>i</var><def>]</def><var>;
+</var>    key<def>[</def><var>cnt<def>[</def><var>a</var><def>]</def>.<sss>size</sss><def>(</def><var></var><def>)</def></var><def>]</def>.<sss>erase<def>(</def><var>a</sss></var><def>)</def><var>;
+</var>    key<def>[</def><var>cnt<def>[</def><var>j</var><def>]</def>.<sss>size</sss><def>(</def><var></var><def>)</def></var><def>]</def>.<sss>erase<def>(</def><var>j</sss></var><def>)</def><var>;
+</var>    cnt<def>[</def><var>a</var><def>]</def>.<sss>erase<def>(</def><var>i</sss></var><def>)</def><var>;
+</var>    cnt<def>[</def><var>j</var><def>]</def>.<sss>insert<def>(</def><var>i</sss></var><def>)</def><var>;
+</var>    key<def>[</def><var>cnt<def>[</def><var>j</var><def>]</def>.<sss>size</sss><def>(</def><var></var><def>)</def></var><def>]</def>.<sss>insert<def>(</def><var>j</sss></var><def>)</def><var>;
+</var>    key<def>[</def><var>cnt<def>[</def><var>a</var><def>]</def>.<sss>size</sss><def>(</def><var></var><def>)</def></var><def>]</def>.<sss>insert<def>(</def><var>a</sss></var><def>)</def><var>;
+</var>    mass<def>[</def><var>i</var><def>]</def><sss>=</sss>j<var>;
+</var><def>}</def>
+<class>int</class> <def>main</def></sss><def>(</def><var></var><def>)</def><def>{</def>
+    <class>int</class> n<var>;
+</var>    //cin<sss>&gt;</sss><sss>&gt;</sss>n<var>;
+</var>    n<sss>=</sss><def>readInt</def></sss><def>(</def><var></sss></var><def>)</def><var>;
+</var>    mass.<sss>reserve<def>(</def><var>n</sss></var><def>)</def><var>;
+</var>    <class>int</class> num<var>;
+</var>    <sss>for</sss> <def>(</def><var><class>int</class> x<sss>=</sss><sss>0</sss>;x<sss>&lt;</sss>n;x<sss>+</sss><sss>+</sss></var><def>)</def><def>{</def>
+        //cin<sss>&gt;</sss><sss>&gt;</sss>num<var>;
+</var>        num<sss>=</sss><def>readInt</def></sss><def>(</def><var></sss></var><def>)</def><var>;
+</var>        mass.<sss>push_back<def>(</def><var>num</sss></var><def>)</def><var>;
+</var>        key<def>[</def><var>cnt<def>[</def><var>num</var><def>]</def>.<sss>size</sss><def>(</def><var></var><def>)</def></var><def>]</def>.<sss>erase<def>(</def><var>num</sss></var><def>)</def><var>;
+</var>        cnt<def>[</def><var>num</var><def>]</def>.<sss>insert<def>(</def><var>x</sss></var><def>)</def><var>;
+</var>        key<def>[</def><var>cnt<def>[</def><var>num</var><def>]</def>.<sss>size</sss><def>(</def><var></var><def>)</def></var><def>]</def>.<sss>insert<def>(</def><var>num</sss></var><def>)</def><var>;
+</var>    <def>}</def>
+    <class>int</class> m<var>;
+</var>    //cin<sss>&gt;</sss><sss>&gt;</sss>m<var>;
+</var>    m<sss>=</sss><def>readInt</def></sss><def>(</def><var></sss></var><def>)</def><var>;
+</var>    char a<var>;
+</var>    <class>int</class> i<var>,</var>j<var>;
+</var>    <sss>for</sss> <def>(</def><var><class>int</class> x<sss>=</sss><sss>0</sss>;x<sss>&lt;</sss>m;x<sss>+</sss><sss>+</sss></var><def>)</def><def>{</def>
+        //cin<sss>&gt;</sss><sss>&gt;</sss>a<var>;
+</var>        a<sss>=</sss><def>readChar</def></sss><def>(</def><var></sss></var><def>)</def><var>;
+</var>        <sss>if</sss> <def>(</def><var>a<sss>=</sss><sss>=</sss><sss>&apos;</sss>?<sss>&apos;</sss></var><def>)</def><def>{</def>
+            <class>int</class> y<sss>=</sss><sss>0</sss><var>;
+</var>            key.<sss>erase<def>(</def><var><sss>0</sss></sss></var><def>)</def><var>;
+</var>            <sss>while</sss> <def>(</def><var>key.<sss>begin</sss><def>(</def><var></var><def>)</def><sss>-</sss><sss>&gt;</sss>second.<sss>empty</sss><def>(</def><var></var><def>)</def></var><def>)</def><def>{</def>
+                key.<sss>erase<def>(</def><var>key.<sss>begin</sss><def>(</def><var></var><def>)</def></sss></var><def>)</def><var>;
+</var>            <def>}</def>
+            <sss>if</sss> <def>(</def><var>key.<sss>begin</sss><def>(</def><var></var><def>)</def><sss>-</sss><sss>&gt;</sss>second.<sss>size</sss><def>(</def><var></var><def>)</def><sss>&gt;</sss>n/<sss>1</sss><sss>0</sss><sss>0</sss></var><def>)</def><def>{</def>
+                <sss>while</sss> <def>(</def><var>key.<sss>begin</sss><def>(</def><var></var><def>)</def><sss>-</sss><sss>&gt;</sss>second.<sss>count<def>(</def><var>mass<def>[</def><var>y</var><def>]</def></var><def>)</def><sss>=</sss><sss>=</sss><sss>0</sss></var><def>)</def><def>{</def>
+                    y<sss>+</sss><sss>+</sss><var>;
+</var>                <def>}</def>
+            <def>}</def>
+            <sss>else</sss><def>{</def>
+                <class>set</class><sss>&lt;</sss><class>int</class><sss>&gt;</sss> aba<var>;
+</var>                <sss>for</sss> <def>(</def><var><class>int</class> g<var>:</var>key.<sss>begin</sss><def>(</def><var></var><def>)</def><sss>-</sss><sss>&gt;</sss>second</var><def>)</def><def>{</def>
+                    aba.<sss>insert<def>(</def><var><sss>*</sss>cnt<def>[</def><var>g</var><def>]</def>.<sss>begin</sss><def>(</def><var></var><def>)</def></sss></var><def>)</def><var>;
+</var>                <def>}</def>
+                y<sss>=</sss><sss>*</sss>aba.<sss>begin</sss><def>(</def><var></sss></var><def>)</def><var>;
+</var>            <def>}</def>
+            //cout<sss>&lt;</sss><sss>&lt;</sss>y<sss>&lt;</sss><sss>&lt;</sss><sss>&apos;</sss>\n<sss>&apos;</sss><var>;
+</var>            <def>writeInt</def><def>(</def><var>y<var>,</var><sss>&apos;</sss>\n<sss>&apos;</sss></sss></var><def>)</def><var>;
+</var>        <def>}</def>
+        <sss>else</sss><def>{</def>
+            //cin<sss>&gt;</sss><sss>&gt;</sss>i<sss>&gt;</sss><sss>&gt;</sss>j<var>;
+</var>            i<sss>=</sss><def>readInt</def></sss><def>(</def><var></sss></var><def>)</def><var>;
+</var>            j<sss>=</sss><def>readInt</def></sss><def>(</def><var></sss></var><def>)</def><var>;
+</var>            <def>chng</def><def>(</def><var>i<var>,</var>j</sss></var><def>)</def><var>;
+</var>        <def>}</def>
+    <def>}</def>
+<def>}</def>
+</pre>
+        <p>i made a python script that make color allocation for parts of code</p>
+        <pre>
+file <sss>=</sss><def> open</def><def>(</def><sss>&apos;</sss>text.txt<sss>&apos;</sss><def>)</def>
+text <sss>=</sss> file<def>.read</def><def>(</def><def>)</def>
+file<def>.close</def><def>(</def><def>)</def>
+
+
+repl <sss>=</sss> <def>{</def><sss>&apos;</sss><sss>&amp;</sss><sss>&apos;</sss> <var>:</var> <sss>&apos;</sss><sss>&amp;</sss>amp;<sss>&apos;</sss><var>,</var><sss>&apos;</sss><sss>&lt;</sss><sss>&apos;</sss> <var>:</var> <sss>&apos;</sss><sss>&amp;</sss>lt;<sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>&gt;</sss><sss>&apos;</sss> <var>:</var> <sss>&apos;</sss><sss>&amp;</sss>gt;<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>\<sss>&quot;</sss><sss>&apos;</sss> <var>:</var> <sss>&apos;</sss><sss>&amp;</sss>quot;<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>\<sss>&apos;</sss><sss>&apos;</sss> <var>:</var> <sss>&apos;</sss><sss>&amp;</sss>apos;<sss>&apos;</sss> <def>}</def>
+<sss>for </sss>i <sss>in </sss>repl<def>.keys</def><def>(</def><def>)</def><var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> repl<def>[</def>i<def>]</def><def>)</def>
+<sss>for </sss>i <sss>in </sss><def>[</def><sss>&apos;</sss><sss>&amp;</sss>amp;<sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>&amp;</sss>lt;<sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>&amp;</sss>gt;<sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>&amp;</sss>quot;<sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>&amp;</sss>apos;<sss>&apos;</sss><def>]</def><var>:</var>
+    text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> <sss>&apos;</sss><sss>&lt;</sss>sss<sss>&gt;</sss><sss>&apos;</sss> <sss>+</sss> i <sss>+</sss> <sss>&apos;</sss><sss>&lt;</sss>/sss<sss>&gt;</sss><sss>&apos;</sss><def>)</def>
+
+
+vars_open <sss>=</sss> <def>[</def><sss>&apos;</sss><def>(</def><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><def>[</def><sss>&apos;</sss><def>]</def>
+vars_closed <sss>=</sss> <def>[</def><sss>&apos;</sss><def>)</def><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><def>]</def><sss>&apos;</sss><def>]</def>
+special_open <sss>=</sss> <def>[</def><sss>&apos;</sss>.<sss>&apos;</sss><def>]</def>
+special_close <sss>=</sss> <def>[</def><sss>&apos;</sss><def>(</def><def>)</def><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><def>)</def>;<sss>&apos;</sss><def>]</def>
+
+
+s_defs <sss>=</sss> <def>[</def><sss>&apos;</sss><def>(</def><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><def>)</def><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><def>[</def><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><def>]</def><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><def>{</def><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><def>}</def><sss>&apos;</sss><def>]</def>     #deef loop call
+c_classes <sss>=</sss> <def>[</def><sss>&apos;</sss>int<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>vector<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>set<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>map<sss>&apos;</sss><def>]</def>     #c<sss>+</sss><sss>+</sss>
+cc_classes <sss>=</sss> <def>{</def><sss>&apos;</sss>_<sss>&lt;</sss>class<sss>&gt;</sss>set<sss>&lt;</sss>/class<sss>&gt;</sss><sss>&apos;</sss> <var>:</var> <sss>&apos;</sss>_set<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>_<sss>&lt;</sss>class<sss>&gt;</sss>map<sss>&lt;</sss>/class<sss>&gt;</sss><sss>&apos;</sss> <var>:</var> <sss>&apos;</sss>_map<sss>&apos;</sss><def>}</def>    #c<sss>+</sss><sss>+</sss>
+c__classes <sss>=</sss> <def>[</def><sss>&apos;</sss>unordered_set<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>unordered_map<sss>&apos;</sss><def>]</def>
+c_defs <sss>=</sss> <def>[</def><sss>&apos;</sss>main<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>readInt<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>writeInt<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>readChar<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>chng<sss>&apos;</sss><def>]</def>    #c<sss>+</sss><sss>+</sss>
+s_special <sss>=</sss> <def>[</def><sss>&apos;</sss><sss>+</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>=</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>-</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>*</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>%</sss><sss>&apos;</sss><var>,</var>
+             <sss>&apos;</sss><sss>0</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>1</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>2</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>3</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>4</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>5</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>6</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>7</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>8</sss><sss>&apos;</sss><var>,</var> <sss>&apos;</sss><sss>9</sss><sss>&apos;</sss><var>,</var>
+             <sss>&apos;</sss>else<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>if<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>elif<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>for<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>while<sss>&apos;</sss><var>,</var>
+             <sss>&apos;</sss>#include<sss>&apos;</sss><def>]</def>   #sss op x m
+s_vars <sss>=</sss> <def>[</def><sss>&apos;</sss><var>,</var><sss>&apos;</sss><var>,</var> <sss>&apos;</sss>;\n<sss>&apos;</sss><var>,</var> <sss>&apos;</sss><var>:</var><sss>&apos;</sss><def>]</def>
+
+
+<sss>for </sss>i <sss>in </sss>special_open<var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> i <sss>+</sss> <sss>&apos;</sss><sss>&lt;</sss>sss<sss>&gt;</sss><sss>&apos;</sss><def>)</def>
+<sss>for </sss>i <sss>in </sss>special_close<var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> <sss>&apos;</sss><sss>&lt;</sss>/sss<sss>&gt;</sss><sss>&apos;</sss> <sss>+</sss> i<def>)</def>
+<sss>for </sss>i <sss>in </sss>vars_open<var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> i <sss>+</sss> <sss>&apos;</sss><sss>&lt;</sss>var<sss>&gt;</sss><sss>&apos;</sss><def>)</def>
+<sss>for </sss>i <sss>in </sss>vars_closed<var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> <sss>&apos;</sss><sss>&lt;</sss>/var<sss>&gt;</sss><sss>&apos;</sss> <sss>+</sss> i<def>)</def>
+<sss>for </sss>i <sss>in </sss>s_vars<var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> <sss>&apos;</sss><sss>&lt;</sss>var<sss>&gt;</sss><sss>&apos;</sss> <sss>+</sss> i <sss>+</sss> <sss>&apos;</sss><sss>&lt;</sss>/var<sss>&gt;</sss><sss>&apos;</sss><def>)</def>
+<sss>for </sss>i <sss>in </sss>c_classes<var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> <sss>&apos;</sss><sss>&lt;</sss>class<sss>&gt;</sss><sss>&apos;</sss> <sss>+</sss> i <sss>+</sss> <sss>&apos;</sss><sss>&lt;</sss>/class<sss>&gt;</sss><sss>&apos;</sss><def>)</def>
+<sss>for </sss>i <sss>in </sss>cc_classes<def>.keys</def><def>(</def><def>)</def><var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> cc_classes<def>[</def>i<def>]</def><def>)</def>
+<sss>for </sss>i <sss>in </sss>c_defs<var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> <sss>&apos;</sss><sss>&lt;</sss>def<sss>&gt;</sss><sss>&apos;</sss> <sss>+</sss> i <sss>+</sss> <sss>&apos;</sss><sss>&lt;</sss>/def<sss>&gt;</sss><sss>&apos;</sss><def>)</def>
+<sss>for </sss>i <sss>in </sss>s_special<var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> <sss>&apos;</sss><sss>&lt;</sss>sss<sss>&gt;</sss><sss>&apos;</sss> <sss>+</sss> i <sss>+</sss> <sss>&apos;</sss><sss>&lt;</sss>/sss<sss>&gt;</sss><sss>&apos;</sss><def>)</def>
+<sss>for </sss>i <sss>in </sss>s_defs<var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> <sss>&apos;</sss><sss>&lt;</sss>def<sss>&gt;</sss><sss>&apos;</sss> <sss>+</sss> i <sss>+</sss> <sss>&apos;</sss><sss>&lt;</sss>/def<sss>&gt;</sss><sss>&apos;</sss><def>)</def>
+<sss>for </sss>i <sss>in </sss>c__classes<var>:</var> text <sss>=</sss> text<def>.replace</def><def>(</def>i<var>,</var> <sss>&apos;</sss><sss>&lt;</sss>class<sss>&gt;</sss><sss>&apos;</sss> <sss>+</sss> i <sss>+</sss> <sss>&apos;</sss><sss>&lt;</sss>/class<sss>&gt;</sss><sss>&apos;</sss><def>)</def>
+
+
+new_file <sss>=</sss><def> open</def><def>(</def><sss>&apos;</sss>edited.txt<sss>&apos;</sss><var>,</var> <sss>&apos;</sss>w<sss>+</sss><sss>&apos;</sss><def>)</def>
+new_file<def>.write</def><def>(</def>text<def>)</def>
+new_file<def>.close</def><def>(</def><def>)</def>
+
+
+<def>print</def><def>(</def><sss>&apos;</sss><sss>&apos;</sss><sss>&apos;</sss>
+                      ____...
+             .-"--"""".__    `.
+            |            `    |
+  (         `._....------.._.:
+   )         .()''        ``().
+  '          () .=='  `===  `-.
+   . )       (         g)
+    )         )     /        J
+   (          |.   /      . (
+   $$         (.  (_'.   , )|`
+   ||         |\`-....--'/  ' \
+  /||.         \ | | | /  /   \.
+ //||(\         \`-===-'  '     \o.
+.//7' |)         `. --   / (     OObaaaad888b.
+(<<. / |     .a888b`.__.'d\     OO888888888888a.
+ \  Y' |    .8888888aaaa88POOOOOO888888888888888.
+  \  \ |   .888888888888888888888888888888888888b
+   |   |  .d88888P88888888888888888888888b8888888.
+   b.--d .d88888P8888888888888888a:f888888|888888b
+   88888b 888888|8888888888888888888888888\8888888
+            <sss>&apos;</sss><sss>&apos;</sss><sss>&apos;</sss><def>)</def>
+        </pre>
+        <p>but you can see some artefacts, that becouse sintacsis diference and my lazyness</p>
+        <p><a id="btt">try it online?!</a><br></p>
+        <hr noshade size="2" color="green">
+    </body>
+    <footer>
+        <a id="pppp" href="https://t.me/p7796">p6tso &copy;</a>
+        <IMG SRC="me.png" width="15" height="15">
+    </footer>
+</html>
